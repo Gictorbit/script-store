@@ -1497,7 +1497,7 @@ Install_ServerSpeeder(){
 	[[ -e ${Server_Speeder_file} ]] && echo -e "${Error} Server Speeder has been installed!" && exit 1
 	#Borrow 91yun.rog's happy version of sharp speed
 	wget --no-check-certificate -qO /tmp/serverspeeder.sh https://raw.githubusercontent.com/91yun/serverspeeder/master/serverspeeder.sh
-	[[ ! -e "/tmp/serverspeeder.sh" ]] && echo -e "${Error} 锐速安装脚本下载失败 !" && exit 1
+	[[ ! -e "/tmp/serverspeeder.sh" ]] && echo -e "${Error} Failed to download the sharp speed installation script !" && exit 1
 	bash /tmp/serverspeeder.sh
 	sleep 2s
 	PID=`ps -ef |grep -v grep |grep "serverspeeder" |awk '{print $2}'`
